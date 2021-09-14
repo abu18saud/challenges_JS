@@ -6,24 +6,13 @@ function largestSmallest(array) {
   return [Math.max.apply(Math, array), Math.min.apply(Math, array)];
 }
 
-/** أكثر القيم تكرارا في المصفوفة
- * قم بكتابة function تستقبل array من نوع integer ، تقوم الـ function بإرجاع أكثر القيم تكرارا في المصفوفة
- */
-
-function mostFrequentElement(arr) {
-  // write your code here
-  return arr.reduce(
-    (a, b, i, arr) => (arr.filter(v => v === a).length >= arr.filter(v => v === b).length ? a : b), null);
-}
-
 /** طرح عناصر مصفوفتين
  * قم بكتابة function تستقبل two arrays من نوع integer ، وتقوم الـ function بطرح العناصر الموجودة في الـ array الأولى من العناصر الموجودة في الـ array الثانية، ثم تقوم بإرجاعarray من نوع integer والتي تمثل حاصل طرح الـ arrays
  */
 
 function subArrays(arr1, arr2) {
   // write your code here
-  arrX = new Array(arr1.map((n, i) => n - arr2[i]));
-  return arrX;
+  return arr2.map((n, i) => n - arr1[i]);
 }
 
 
