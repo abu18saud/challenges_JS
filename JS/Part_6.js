@@ -1,7 +1,13 @@
 // فصل الكلمات
+//https://attacomsian.com/blog/javascript-array-lowercase-uppercase
+//
 
-
-
+function capSpace(txt) {
+    // write your code here
+    words = txt.split(/(?=[A-Z])/)
+    word = words.map(name => name.toLowerCase());
+    return word.reduce((a, b) => a +" "+ b);
+}
 
 
 
@@ -52,3 +58,33 @@ function numToEng2(n) {
 
 
 // التحويل من ١٢ ساعة إلى ٢٤ ساعة والعكس
+
+
+
+
+
+// تحديد الأعداد الفردية و الزوجية
+
+function oddsVsEvens(num) {
+    // write your code here
+    var odds = 0;
+    var evens = 0;
+
+    for (i = 0; i <= num; i++) {
+        if (i % 2 == 0) {
+            evens += i;
+            console.log(i);
+        } else {
+            odds += i;
+        }
+    }
+
+
+    if (evens > odds) {
+        return "even";
+    } else if (evens < odds) {
+        return "odd";
+    } else {
+        return "equal";
+    }
+}
