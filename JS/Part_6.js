@@ -6,11 +6,8 @@ function capSpace(txt) {
     // write your code here
     words = txt.split(/(?=[A-Z])/)
     word = words.map(name => name.toLowerCase());
-    return word.reduce((a, b) => a +" "+ b);
+    return word.reduce((a, b) => a + " " + b);
 }
-
-
-
 
 // طرح عددين بدون علامة الطرح
 
@@ -58,7 +55,23 @@ function numToEng2(n) {
 
 
 // التحويل من ١٢ ساعة إلى ٢٤ ساعة والعكس
+function convertTime(time) {
+    // write your code here
+    var d = new Date(time);
+    hour = d.getHours();
+    min = d.getMinutes();
+    sec = d.getSeconds();
+    tt = d.get
 
+    //return `${year}/${mongth}/${day} | ${year}-${mongth}-${day} | ${mongth}/${day}/${year}`;
+
+
+    if (time.includes("am") || time.includes("am")) {
+        return hour;
+    } else {
+        return hour;
+    }
+}
 
 
 
