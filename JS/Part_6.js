@@ -11,7 +11,31 @@ function capSpace(txt) {
 
 // طرح عددين بدون علامة الطرح
 
+function mySub(num1, num2) {
+    // write your code here
+    // Iterate till there
+    // is no carry
+    if (num2 == 0)
+        return num1;
 
+    while (num2 != 0) {
+        // borrow contains common
+        // set bits of y and unset
+        // bits of x
+        let borrow = (~num1) & num2;
+
+        // Subtraction of bits of x
+        // and y where at least one
+        // of the bits is not set
+        num1 = num1 ^ num2;
+
+        // Borrow is shifted by one
+        // so that subtracting it from
+        // x gives the required sum
+        num2 = borrow << 1;
+    }
+    return num1;
+}
 
 
 
@@ -29,75 +53,53 @@ function octToBin(octal) {
     return binary;
 }
 
+// جمع عددين داخل قيمة نصية
 
-
-
-// تحويل الأرقام إلى نصوص
-// https://github.com/yamadapc/js-written-number
-// https://newbedev.com/javascript-convert-number-to-words-code-example
-// https://github.com/ASammour/TafqeetJs
-
-function numToEng(n) {
-
-    var num = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(" ");
-    var tens = "twenty thirty forty fifty sixty seventy eighty ninety".split(" ");
+function addStrNums(num1, num2) {
     // write your code here
-    if (n < 20) return num[n];
-    var digit = n % 10;
-    if (n < 100) return tens[~~(n / 10) - 2] + (digit ? "-" + num[digit] : "");
-    if (n < 1000) return num[~~(n / 100)] + " hundred" + (n % 100 == 0 ? "" : " and " + number2words(n % 100));
-    return number2words(~~(n / 1000)) + " thousand" + (n % 1000 != 0 ? " " + number2words(n % 1000) : "");
-}
-
-function numToEng2(n) {
-    return number2words(~~(n / 1000));
-}
-
-
-// التحويل من ١٢ ساعة إلى ٢٤ ساعة والعكس
-function convertTime(time) {
-    // write your code here
-    var d = new Date(time);
-    hour = d.getHours();
-    min = d.getMinutes();
-    sec = d.getSeconds();
-    tt = d.get
-
-    //return `${year}/${mongth}/${day} | ${year}-${mongth}-${day} | ${mongth}/${day}/${year}`;
-
-
-    if (time.includes("am") || time.includes("am")) {
-        return hour;
+    result = parseInt(num1) + parseInt(num2);
+    if (isNaN(result)) {
+        return -1;
     } else {
-        return hour;
+        return result;
     }
 }
 
+// التحقق من العملية الرياضية
 
-
-
-// تحديد الأعداد الفردية و الزوجية
-
-function oddsVsEvens(num) {
+function mathExpr(expr) {
     // write your code here
-    var odds = 0;
-    var evens = 0;
+    arr = [];
+    result = 0;
 
-    for (i = 0; i <= num; i++) {
-        if (i % 2 == 0) {
-            evens += i;
-            console.log(i);
-        } else {
-            odds += i;
-        }
+    if (expr.includes("+")) {
+        arr = expr.split('+');
+        result = parseInt(arr[0]) + parseInt(arr[1]);
+    } else if (expr.includes("*")) {
+        arr = expr.split('*');
+        result = parseInt(arr[0]) * parseInt(arr[1]);
+
+    } else if (expr.includes("/")) {
+        arr = expr.split('/');
+        result = parseInt(arr[0]) / parseInt(arr[1]);
+
+    } else if (expr.includes("-")) {
+        arr = expr.split('-');
+        result = parseInt(arr[0]) - parseInt(arr[1]);
+
+    }
+    else if (expr.includes("%")) {
+        arr = expr.split('%');
+        result = parseInt(arr[0]) % parseInt(arr[1]);
+
+    } else {
+        return false;
     }
 
 
-    if (evens > odds) {
-        return "even";
-    } else if (evens < odds) {
-        return "odd";
+    if (isNaN(result)) {
+        return false;
     } else {
-        return "equal";
+        return result;
     }
 }
