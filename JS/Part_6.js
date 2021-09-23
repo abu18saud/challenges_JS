@@ -1,7 +1,22 @@
+
+
+// تحويل رقم ثماني إلى رقم ثنائي
+function binToOct(b) {
+    // write your code here
+    var octal = parseInt(b, 2).toString(8);
+    return octal;
+}
+
+// تحويل رقم ثماني إلى رقم ثنائي
+function octToBin(octal) {
+    // write your code here
+    var binary = parseInt(octal, 8).toString(2);
+    return binary;
+}
+
 // فصل الكلمات
 //https://attacomsian.com/blog/javascript-array-lowercase-uppercase
 //
-
 function capSpace(txt) {
     // write your code here
     words = txt.split(/(?=[A-Z])/)
@@ -39,19 +54,6 @@ function mySub(num1, num2) {
 
 
 
-// تحويل رقم ثماني إلى رقم ثنائي
-function binToOct(b) {
-    // write your code here
-    var octal = parseInt(b, 2).toString(8);
-    return octal;
-}
-
-// تحويل رقم ثماني إلى رقم ثنائي
-function octToBin(octal) {
-    // write your code here
-    var binary = parseInt(octal, 8).toString(2);
-    return binary;
-}
 
 // جمع عددين داخل قيمة نصية
 
@@ -71,8 +73,9 @@ function mathExpr(expr) {
     // write your code here
     arr = [];
     result = 0;
+    words = txt.split(/(?=[A-Z])/)
 
-    if (expr.includes("+")) {
+if (expr.includes(/(?=[*/-+])/)) {
         arr = expr.split('+');
         result = parseInt(arr[0]) + parseInt(arr[1]);
     } else if (expr.includes("*")) {
