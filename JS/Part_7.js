@@ -1,8 +1,9 @@
+// بمناسبة اليوم الوطني نهنئ قيادتنا الرشيدة وشعبنا العظيم ب 91عاماً من الطموح والعزة والافتخار
 // تمرير قيمة الأس
 
 function exponent_x(number, exponent) {
   // write your code here
-  return Math.pow(number, exponent);
+  return Math.pow(number, );
 }
 
 // إزالة الرموز من النصوص - السامر القحطاني
