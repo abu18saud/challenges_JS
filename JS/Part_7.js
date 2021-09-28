@@ -3,7 +3,7 @@
 
 function exponent_x(number, exponent) {
   // write your code here
-  return Math.pow(number, );
+  return Math.pow(number, exponent);
 }
 
 // إزالة الرموز من النصوص - السامر القحطاني
