@@ -61,3 +61,24 @@ function oddsVsEvens(num) {
         return "equal";
     }
 }
+
+function oddsVsEvens(num) {
+    // write your code here
+
+    arrayNum = Array(num+1).fill(0).map((_, i) => i * 1);
+
+
+    even = arrayNum.filter(number => number % 2 == 0);
+    odds = arrayNum.filter(number => number % 2 == 1);
+    console.log(even.reduce((a, b) => a + b));
+    console.log(odds.reduce((a, b) => a + b));
+
+
+    if (odds.reduce((a, b) => a + b) > even.reduce((a, b) => a + b)) {
+        return "odds";
+    } else if (odds.reduce((a, b) => a + b) < even.reduce((a, b) => a + b)) {
+        return "even";
+    } else {
+        return "equal";
+    }
+}

@@ -15,3 +15,27 @@ function countDown(number) {
 }
 
 
+// حساب تكرار حرف
+function countChar(sentence, ch) {
+    // write your code here
+    return (sentence.match(new RegExp(ch, "g")) || []).length;//تعبير نمطي
+}
+
+//جمع وعكس الكلمات
+function reverseWords(str1, str2) {
+    // write your code here
+    arr = [str1, str2];
+    return arr.reverse().join(', ');
+}
+
+//عكس حالة الحروف
+function reverseCase(str) {
+    // write your code here
+    return str.replace(/./g, c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase());
+}
+
+//إضافة كلمة داخل نص
+function say_hi_bye(name, num) {
+    // write your code here
+    return (num == 0) ? "Bye " + name : "Hi " + name;
+}
