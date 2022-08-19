@@ -54,3 +54,20 @@ function word_repeat(word, n) {
 
     return container;
 }
+
+/** مضروب العدد
+ * قم بكتابة دالة function تستقبل عدد صحيح من نوع integer، وتقوم الدالة function بإرجاع مضروب العدد المدخل (factorial)
+ */
+
+function factorial(number) {
+    // write your code here
+    ans = 1;
+    if (number == 0 || number == 1) {
+        return ans;
+    } else {
+        for (i = number; i > 1; i--) {
+            ans = ans * i;
+        }
+    }
+    return ans;
+}
