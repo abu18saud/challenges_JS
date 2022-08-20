@@ -56,18 +56,16 @@ function date_format(date) {
   container += d.toISOString().slice(0, 10) + " | ";
   container += new Intl.DateTimeFormat('en-US').format(d);
   return container;
-}
-
-function date_format_2(date) {
-  // write your code here 
-  //"2020/1/1 | 2020-1-1 | 1/1/2020"
+    //"2020/1/1 | 2020-1-1 | 1/1/2020"
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
 
   //var d = (date).toString().replace(/\S+\s(\S+)\s(\d+)\s(\d+)\s.*/,'$2/$1/$3 | $3-$2-$1 | $2/$1/$3');//    //"2020/1/1 | 2020-1-1 | 1/1/2020"
   //String.format("{0}/{1}/{2}", day, mongth, year)
   //  return `${year}/${mongth}/${day} | ${year}-${mongth}-${day} | ${mongth}/${day}/${year}`;
+}
 
-
+function date_format_2(date) {
+  // write your code here 
   var d = new Date(date);
   day = d.getDate();
   mongth = d.getMonth() + 1;
