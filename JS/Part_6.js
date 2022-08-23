@@ -1,6 +1,7 @@
 
 
-// تحويل رقم ثماني إلى رقم ثنائي
+// تحويل رقم ثنائي إلى رقم ثماني
+// قم بكتابة دالة function تستقبل متغير من نوع string يعبر عن قيمة ثمانية binary number، ثم قم بإرجاع النتيجة بعد التحويل الى قيمة ست عشرية octal number بنوع int
 function binToOct(b) {
     // write your code here
     var octal = parseInt(b, 2).toString(8);
@@ -8,6 +9,7 @@ function binToOct(b) {
 }
 
 // تحويل رقم ثماني إلى رقم ثنائي
+// قم بكتابة دالة function تستقبل متغير من نوع int يعبر عن قيمة ثمانية octal number، ثم قم بإرجاع النتيجة بعد التحويل الى قيمة ثنائية binary number من نوع string.
 function octToBin(octal) {
     // write your code here
     var binary = parseInt(octal, 8).toString(2);
@@ -52,10 +54,8 @@ function mySub(num1, num2) {
     return num1;
 }
 
-
-
-
 // جمع عددين داخل قيمة نصية
+// قم بكتابة دالة function تستقبل قيمتين نصية من نوع string ، في حال كانت القيمتين المدخلتين تحتوي على أعداد تقوم الدالة بجمع الأعداد و إرجاعها كقيمة نصية ، و في حال كانت أحد المدخلات تحتوي على أحرف تقوم بإرجاع -1 كقيمة نصية
 
 function addStrNums(num1, num2) {
     // write your code here
@@ -75,7 +75,7 @@ function mathExpr(expr) {
     result = 0;
     words = txt.split(/(?=[A-Z])/)
 
-if (expr.includes(/(?=[*/-+])/)) {
+    if (expr.includes(/(?=[*/-+])/)) {
         arr = expr.split('+');
         result = parseInt(arr[0]) + parseInt(arr[1]);
     } else if (expr.includes("*")) {
