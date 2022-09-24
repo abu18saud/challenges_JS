@@ -45,7 +45,8 @@ function getCentury(year) {
 */
 function get_available_IPs(ip1, ip2, addresses) {
     // write your code here
-    return addresses.sort().reverse().filter(value => value > ip1 && value <= ip2);
+    return addresses.sort().reverse().filter(value => value >
+        ip1 && value <= ip2);
     // return function (a) {  };
 
 }
@@ -194,12 +195,21 @@ function remaining_download_time(file_size, bytes_downloaded, minutes_of_observa
 
     if (bytes_downloaded.length == 0) {
         return file_size;
-    } else {
-        calc = (file_size - sum) / (sum / bytes_downloaded.length);
-        if (calc < 10) {
-            return Math.ceil(calc);
-        } else {
-            return Math.round(calc);
-        }
+    } else if (bytes_downloaded == sum) {
+        return 0;
+    }
+    else {
+        // calc = (file_size - sum) / (sum / bytes_downloaded.length);
+        // if (calc < 10) {
+        //     return Math.ceil(calc);
+        // } else {
+        //     return Math.round(calc);
+        // }
+
+        bagy = file_size - sum;
+
+        fin = bagy / ((bytes_downloaded[bytes_downloaded.length - 1] + bytes_downloaded[bytes_downloaded.length - 1]) / minutes_of_observation);
+
+        return fin;
     }
 }
