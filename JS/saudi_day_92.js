@@ -162,10 +162,7 @@ function get_king_names(year1, year2) {
 
     let arr1 = [Abdulaziz, saud, faisal, khalid, fahad, abdullah, salman];
     let arr2 = [];
-    // for (let i = 1930; i < 2023; i++) {
 
-
-    // }
 
 
     for (let i = year1; i < year2; i++) {
@@ -175,10 +172,13 @@ function get_king_names(year1, year2) {
             }
         }
     }
-    //function(item, pos, ary) {return !pos || item != ary[pos - 1];}
     return arr2.filter((item, pos, ary) => !pos || item != ary[pos - 1]);
 }
+    // for (let i = 1930; i < 2023; i++) {
 
+
+    // }
+    //function(item, pos, ary) {return !pos || item != ary[pos - 1];}
 
 //حساب الوقت المتبقي من تحميل ملف
 
@@ -186,30 +186,38 @@ function get_king_names(year1, year2) {
 قم بكتابة دالة function تستقبل ثلاث متغيرات، المتغير الأول file_size يرمز إلى حجم الملف، المتغير الثاني bytes_downloaded يرمز إلى مصفوفة كل عنصر فيها يمثل حجم الـBytes الذي تم تحميلها خلال دقيقة والمتغير الثالث minutes_of_observation هو عدد دقائق الملاحظة الأخيرة من تحميل الملف. تقوم الدالة بحساب الوقت التقريبي المتبقي من تحميل الملف بالكامل بالدقائق. ملاحظه إذا لم يكن هناك عناصر في المصفوفة يتم إرجاع قيمة حجم الملف.
 */
 
+
 function remaining_download_time(file_size, bytes_downloaded, minutes_of_observation) {
     // write your code here
     sum = 0;
-    for (i of bytes_downloaded) {
+    sum2 = 0;
+
+    for (let i of bytes_downloaded) {
         sum += i;
     }
 
+    for (let i of bytes_downloaded.reverse().slice(0, 2)) {
+        sum2 += i;
+    }
+
+
     if (bytes_downloaded.length == 0) {
         return file_size;
-    } else if (bytes_downloaded == sum) {
-        return 0;
     }
     else {
-        // calc = (file_size - sum) / (sum / bytes_downloaded.length);
-        // if (calc < 10) {
-        //     return Math.ceil(calc);
-        // } else {
-        //     return Math.round(calc);
-        // }
-
-        bagy = file_size - sum;
-
-        fin = bagy / ((bytes_downloaded[bytes_downloaded.length - 1] + bytes_downloaded[bytes_downloaded.length - 1]) / minutes_of_observation);
-
-        return fin;
+        let avg = (sum2 / minutes_of_observation);
+        return Math.ceil(file_size - sum) / avg;
     }
+}
+
+function remaining_download_time2(file_size, bytes_downloaded, minutes_of_observation) {
+    if(bytes_downloaded.length === 0) return file_size;
+    let total = 0;
+    bytes_downloaded.forEach(byte => total += byte);
+    let trr = bytes_downloaded.reverse();
+    trr.length = minutes_of_observation;
+    let d = 0;
+    trr.forEach(byte => d += byte);
+    let avg = d / minutes_of_observation;
+    return (file_size - total) / avg;
 }
