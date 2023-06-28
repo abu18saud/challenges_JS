@@ -56,7 +56,7 @@ function kSumSubset(dateString) {
 أيام * 24 * 60 * 60 * 1000 = يوم * 86400000 مللي ثانية
   */
 
-//https://pitstop.manageengine.com/portal/en/kb/articles/formula-to-convert-milliseconds-to-days-hours-minutes-and-seconds
+  //https://pitstop.manageengine.com/portal/en/kb/articles/formula-to-convert-milliseconds-to-days-hours-minutes-and-seconds
 }
 
 //بوابة الضرب المنطقي
